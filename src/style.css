@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 100px;
+  padding: 10px 10px 2px 10px;
+  background-color: #2c4552;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  color: #e9c46a;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.assignee-img {
+  margin-bottom: -2px;
+}
