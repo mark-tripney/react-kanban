@@ -5,14 +5,15 @@ import notes from './img/notes-icon.png';
 import deadline from './img/deadline-icon.png';
 import assignee from './img/assignee-icon.png';
 
-function Card() {
+function Card({ cardData }) {
   return (
-    <div className="card">
-      <p>Task heading</p>
+    <div className="card" draggable="true">
+      <p>{cardData.task}</p>
       <div className="card-icons">
         <span className="deadline-icon">
           <img src={deadline} alt="Deadline icon" />
         </span>
+        <span className="due-date">{cardData.due ? cardData.due : null}</span>
         <span className="notes-icon">
           <img src={notes} alt="Notes icon" />
         </span>
@@ -24,4 +25,11 @@ function Card() {
   );
 }
 
-ReactDOM.render(<Card />, document.querySelector('#root'));
+const dummyCard = {
+  task: 'Get to work on React Kanban',
+  due: '10.12.20',
+  notes: null,
+  assignee: null,
+};
+
+ReactDOM.render(<Card cardData={dummyCard} />, document.querySelector('#root'));
